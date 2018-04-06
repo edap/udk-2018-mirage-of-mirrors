@@ -18,3 +18,11 @@ Picture from *Kader Attia "Holy Land", 2006*
 - Rays
 - Faces
 - Symmetries
+
+## Learning Resources
+
+- [The openFrameworks book](http://openframeworks.cc/ofBook/chapters/intro_to_graphics.html)
+- [The openFrameworks forum](https://forum.openframeworks.cc/)
+- [The openFrameworks official documentation](http://openframeworks.cc/documentation/)
+- [A collection of small fixes](http://openframeworks.cc/learning/)
+- The `examples` folder in your openFrameworks installation
