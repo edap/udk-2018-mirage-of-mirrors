@@ -6,6 +6,8 @@ The goal of this course is to define the mirror as software, which reflects ray 
 
 > Mirrors and copulation are abominable, since they both multiply the numbers of men...
 
-__ Jorge Luis Borges,  from "Tlön, Uqbar, Orbis Tertius", 1940 __
+*Jorge Luis Borges,  from "Tlön, Uqbar, Orbis Tertius", 1940*
 
 ![kader attia holy land](img/kader-attia-holy-land.jpg)
+
+Picture from *Kader Attia "Holy Land", 2006*
