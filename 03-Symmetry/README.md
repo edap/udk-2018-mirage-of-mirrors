@@ -2,9 +2,6 @@
 
 This sketch draws on the right side of the screen what was drawn in the left side.
 
-
-## openFrameworks 
-
 ## Exercise
 
 Make your own symmetryc drawing app, the wilder&weirder, the better. 
@@ -22,9 +19,13 @@ Can you imagine other ways to divide the screen maintaining a kind of simmetry?
 
 - The app draws circles dragging the mouse. Which other types of interaction can you imagine?
 
+- The color is set in HSB color space. Have a look at the [documentation](http://openframeworks.cc/documentation/types/ofColor) to understand how you can change the color in your application.
 
+### You will learn
 
-## References
+`FBOs`, color spaces, `ofMap`, `sin`, `glm::distance`, `ofSetCircleResolution`, `ofSetLineWidth`, `ofPushStyle`, `ofPopStyle`
+
+### References
 
 [Rorschach test](https://en.wikipedia.org/wiki/Rorschach_test)
 
