@@ -12,3 +12,9 @@ The goal of this course is to define the mirror as software, which reflects ray 
 ![kader attia holy land](img/kader-attia-holy-land.jpg)
 
 Picture from *Kader Attia "Holy Land", 2006*
+
+## Contents
+
+- Rays
+- Faces
+- Symmetries
