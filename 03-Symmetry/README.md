@@ -30,3 +30,5 @@ Can you imagine other ways to divide the screen maintaining a kind of simmetry?
 [Rorschach test](https://en.wikipedia.org/wiki/Rorschach_test)
 
 [Symmetry in Biology](https://en.wikipedia.org/wiki/Symmetry_in_biology)
+
+[Symmetry in ancient Egyptian art](http://www.gizapower.com/Plate%204.jpg)
