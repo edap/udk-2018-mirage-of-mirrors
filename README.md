@@ -1,7 +1,11 @@
 # Mirage of mirrors
 
 What remains of a mirror after its removal?
+Is it possible to symbolise a mirror without showing it?
+The goal of this course is to define the mirror as software, which reflects ray of lights, duplicates and distorts images, and can displace our face on an infinity of surfaces.
 
-How is it possible to depict a mirror without showing it?
+> Mirrors and copulation are abominable, since they both multiply the numbers of men...
 
-The goal of this course is to define the mirror as a software object. An object that reflects ray of lights, duplicates and distorts images; an object in which we can see our face displaced on an infinity of surfaces.
+__ Jorge Luis Borges,  from "Tlön, Uqbar, Orbis Tertius", 1940 __
+
+![kader attia holy land](img/kader-attia-holy-land.jpg)
