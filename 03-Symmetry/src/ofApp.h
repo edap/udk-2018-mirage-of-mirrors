@@ -27,7 +27,7 @@ public:
     glm::vec2 toCenter;
     bool drawing = false;
     ofFbo fbo;
-    float resolution = 100;
+    float resolution = 200;
     bool fill = true;
 		
 };

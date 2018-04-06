@@ -81,8 +81,8 @@ ofColor ofApp::pickColor(){
     int saturation = 255;
     int brightness = 255;
     int alpha = 200;
-    float sinOfTimeHue = sin(ofGetElapsedTimef()*0.5);
-    float hue = ofMap(sinOfTimeHue, -1, 1, 0, 255);
+    float sinOfTime = sin(ofGetElapsedTimef()*0.5);
+    float hue = ofMap(sinOfTime, -1, 1, 0, 255);
     ofColor c = ofColor::fromHsb(hue, saturation, brightness);
     c.a = alpha;
     return c;
@@ -90,10 +90,12 @@ ofColor ofApp::pickColor(){
 
 void ofApp::drawCircle(){
     ofPushStyle();
-    auto c = pickColor();
+    //auto c = pickColor();
+    auto c = ofColor(255,0,0);
     ofSetColor(c);
     ofSetCircleResolution(resolution);
     if (!fill) {
+        ofSetLineWidth(ofMap(sin(ofGetElapsedTimef()*1.5), -1, 1, 1, 10));
         ofNoFill();
     }
     ofDrawCircle(center, glm::distance(center, toCenter));
