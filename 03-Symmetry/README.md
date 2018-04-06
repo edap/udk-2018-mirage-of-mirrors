@@ -23,7 +23,7 @@ Can you imagine other ways to divide the screen maintaining a kind of simmetry?
 
 ### You will learn
 
-`FBOs`, color spaces, `ofMap`, `sin`, `glm::distance`, `ofSetCircleResolution`, `ofSetLineWidth`, `ofPushStyle`, `ofPopStyle`
+`FBOs`, color spaces, coordinate system, `ofMap`, `sin`, `glm::distance`, `ofSetCircleResolution`, `ofSetLineWidth`, `ofPushStyle`, `ofPopStyle`, `ofSetColor`
 
 ### References
 
