@@ -30,7 +30,7 @@ public:
     glm::vec2 startPoint;
     glm::vec2 endPoint;
 
-    glm::vec2 intersection;
+    float distance;
     bool doesItIntersect = false;
 
     vector<Segment> rays;

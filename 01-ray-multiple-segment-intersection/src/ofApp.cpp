@@ -29,11 +29,12 @@ void ofApp::draw(){
         ofDrawLine(s.a, s.b);
         ofPopStyle();
 
-        ray.intersectsSegment(s.a, s.b, intersection, doesItIntersect);
+        doesItIntersect = ray.intersectsSegment(s.a, s.b, distance);
         // is there an intersection? add a new ray
         if(doesItIntersect){
             // keep the rays number under the limit
             if (rays.size() < limit) {
+                auto intersection = ray.getOrigin() + ray.getDirection() * distance;
                 Segment tmpSegment;
                 tmpSegment.a = ray.getOrigin();
                 tmpSegment.b = intersection;
