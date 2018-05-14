@@ -55,10 +55,6 @@ public:
     ofxIntSlider limit;
     ofxFloatSlider freq;
     ofxColorSlider color;
-    bool drawGui = false;
-
-    int nBounce = 4;
-
-    
+    bool drawGui = false;  
     
 };

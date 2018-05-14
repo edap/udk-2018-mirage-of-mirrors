@@ -15,11 +15,15 @@ Release*/
 *.perspectivev3
 *.mode1v3
 *.mode2v3
+*/bin/*_debug
 #XCode 4
 xcuserdata
 *.xcworkspace
 
 #QtCreator TODO
+build-*
+*.qbs
+*.qbs.user
 
 #Visual Studio
 *.sdf
