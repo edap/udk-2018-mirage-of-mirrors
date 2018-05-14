@@ -56,6 +56,7 @@ void ofApp::drawBouncingRay(ofxraycaster::Ray<glm::vec2>& myRay, int& limit){
         bool intersection = false;
         Segment tmpSegment;
         //find the closest segment that intersect with the ray
+        // save it into tmpSegment, and save the distance too.
         for (auto s:segments) {
             if (myRay.intersectsSegment(s.a, s.b, tmpDistance)) {
                 if (intersection == false) { intersection = true;};
@@ -71,7 +72,7 @@ void ofApp::drawBouncingRay(ofxraycaster::Ray<glm::vec2>& myRay, int& limit){
             auto color = tmpSegment.color;
             drawLine(myRay.getOrigin(), intersectionPoint, color);
 
-            //setup the bounce
+            // the direction of the ray will be the direction of the reflected light
             auto segmentDir = tmpSegment.a - tmpSegment.b;
             auto segmentSurfaceNormal = glm::vec2(segmentDir.y, -segmentDir.x);
             auto reflectDir = glm::reflect(myRay.getDirection(), segmentSurfaceNormal);
