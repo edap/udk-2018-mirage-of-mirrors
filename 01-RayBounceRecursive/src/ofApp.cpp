@@ -1,4 +1,5 @@
 #include "ofApp.h"
+#include "utils.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -82,7 +83,7 @@ void ofApp::drawBouncingRay(ofxraycaster::Ray<glm::vec2>& myRay, int& limit){
             // on which its origin lays.
 
             myRay.setup(intersectionPoint +reflectDir*eps,reflectDir);
-            //myRay.draw(); try to draw the ray to understand what is happening
+            myRay.draw(); //try to draw the ray to understand what is happening
             drawBouncingRay(myRay, limit); // recursive function, a function that call itself
         }
     }
