@@ -1,18 +1,22 @@
 #include "ofApp.h"
-#include "utils.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    gui.setup();
-    gui.add(limit.setup("n rays", 140, 10, 5000));
-    gui.add(freq.setup("freq", 1, 0.1, 10));
-    gui.add(color.setup("color", ofColor(240, 255, 255), ofColor(0, 0), ofColor(255, 255)));
+    ray.setup(glm::vec2(100,100), glm::vec2(0,1));
+
+    blur.setupRGB(ofGetWindowWidth(), ofGetWindowHeight());
+    blur.setMode(3);
+    parameters.setName("settings");
+    parameters.add(blur.parametersRGB);
+    parameters.add(freq.set("freq",0.5,0.1, 3.0));
+    gui.setup(parameters);
+    gui.loadFromFile("settings.xml");
+
+    bypass = false; //bypass shader;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    // in this sketch, the function drawBounces is changing the position and the direction of the ray at each bounce.
-    // that's why we need to reposition the ray and reset the direction in the update method
     auto orig = glm::vec2(ofGetWidth()/2, ofGetHeight()/2);
     ray.setOrigin(orig);
     auto sinedT = sin(ofGetElapsedTimef() * freq);
@@ -22,9 +26,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofSetBackgroundColor(color);
-
-    ray.draw();
+    blur.begin();
+    //ray.draw();
 
     for(auto s:segments){
         ofPushStyle();
@@ -39,11 +42,11 @@ void ofApp::draw(){
         auto mouse = glm::vec2(ofGetMouseX(), ofGetMouseY());
         ofDrawLine(startPoint, mouse);
     }
+    blur.endRGB();
 
-    if (drawGui) {
+    if(drawGui){
         gui.draw();
     }
-
 }
 
 // this function is taking as argument a & myRay, not a myRay. The & is important
@@ -71,9 +74,9 @@ void ofApp::drawBouncingRay(ofxraycaster::Ray<glm::vec2>& myRay, int& limit){
         if (intersection) {
             auto intersectionPoint = myRay.getOrigin() + myRay.getDirection() * distance;
             auto color = tmpSegment.color;
-            //drawLine(myRay.getOrigin(), intersectionPoint, color);
+            drawLine(myRay.getOrigin(), intersectionPoint, color);
             //drawLineAsRect(myRay.getOrigin(), intersectionPoint, color, 7.);
-            drawLineAsRectRounded(myRay.getOrigin(), intersectionPoint, color, 10.);
+            //drawLineAsRectRounded(myRay.getOrigin(), intersectionPoint, color, 10.);
 
             // the direction of the ray will be the direction of the reflected light
             auto segmentDir = tmpSegment.a - tmpSegment.b;
@@ -85,7 +88,7 @@ void ofApp::drawBouncingRay(ofxraycaster::Ray<glm::vec2>& myRay, int& limit){
             // on which its origin lays.
 
             myRay.setup(intersectionPoint +reflectDir*eps,reflectDir);
-            myRay.draw(); //try to draw the ray to understand what is happening
+            //myRay.draw(); try to draw the ray to understand what is happening
             drawBouncingRay(myRay, limit); // recursive function, a function that call itself
         }
     }
@@ -99,45 +102,31 @@ void ofApp::drawLine(glm::vec2 o, glm::vec2 e, ofColor c){
 
 };
 
-void ofApp::drawLineAsRect(glm::vec2 startVec, glm::vec2 endVec, ofColor c, float thickness) {
-  float angle = atan((endVec.y-startVec.y)/(endVec.x-startVec.x));
-  ofPushMatrix();
-  ofTranslate(startVec.x,startVec.y);
-  ofRotate(ofRadToDeg(angle));
-  float lineLength = (endVec.x - startVec.x)/cos(angle);
-  ofPushStyle();
-  ofSetColor(c);
-  ofDrawRectangle(0,-thickness/2,lineLength,thickness);
-  ofPopStyle();
-  ofPopMatrix();
-}
-
-void ofApp::drawLineAsRectRounded(glm::vec2 startVec, glm::vec2 endVec, ofColor c,float thickness){
-    float angle = atan((endVec.y-startVec.y)/(endVec.x-startVec.x));
-    ofPushMatrix();
-    ofTranslate(startVec.x,startVec.y);
-    ofRotateRad(angle);
-    float lineLength = (endVec.x - startVec.x)/cos(angle) - thickness/2;
-    glm::vec2 lineDir = glm::normalize(endVec - startVec);
-    ofPushStyle();
-    ofSetColor(c);
-    //origin cap
-    ofDrawCircle(glm::vec2(0,0)+lineDir*(thickness/2), thickness/2);
-    ofDrawRectangle(0,-thickness/2,lineLength,thickness);
-    ofDrawCircle(glm::vec2(0,0)+lineDir*lineLength, thickness/2);
-    ofPopStyle();
-    ofPopMatrix();
-};
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    if (key == 'g') {
+    if(key == 'g'){
         drawGui = !drawGui;
     }
-
     if (key == 'c') {
         segments.clear();
     }
 
+    if(key == ' '){
+        bypass = !bypass;
+        blur.setBypass(bypass);
+    }
+    else if(key == '0'){
+        blur.setMode(0);
+    }
+    else if(key == '1'){
+        blur.setMode(1);
+    }
+    else if(key == '2'){
+        blur.setMode(2);
+    }
+    else if(key == '3'){
+        blur.setMode(3);
+    }
 }
 
 //--------------------------------------------------------------
@@ -198,5 +187,5 @@ void ofApp::gotMessage(ofMessage msg){
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
-    
+
 }

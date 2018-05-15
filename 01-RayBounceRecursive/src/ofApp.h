@@ -30,6 +30,8 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     void drawLine(glm::vec2 o, glm::vec2 e, ofColor c);
+    void drawLineAsRect(glm::vec2 startVec, glm::vec2 endVec, ofColor c,float thickness);
+    void drawLineAsRectRounded(glm::vec2 startVec, glm::vec2 endVec, ofColor c,float thickness);
 
     void drawBouncingRay(ofxraycaster::Ray<glm::vec2> &_ray, int& _limit);
 
@@ -38,9 +40,6 @@ public:
 
     glm::vec2 startPoint;
     glm::vec2 endPoint;
-
-    float distance;
-    bool doesItIntersect = false;
 
     bool isDrawing = false;
 

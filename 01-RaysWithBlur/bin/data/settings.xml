@@ -1,0 +1,13 @@
+<settings>
+	<parametersRGB>
+		<nPasses>5</nPasses>
+		<offsetR>0.866327</offsetR>
+		<offsetG>0.413265</offsetG>
+		<offsetB>0.117347</offsetB>
+	<mult>2.0102</mult>
+		<multX>1</multX>
+		<multY>0.591837</multY>
+		<gain>1.02041</gain>
+	</parametersRGB>
+<settings/>
+</settings>
