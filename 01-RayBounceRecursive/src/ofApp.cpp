@@ -1,5 +1,4 @@
 #include "ofApp.h"
-#include "utils.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -71,10 +70,7 @@ void ofApp::drawBouncingRay(ofxraycaster::Ray<glm::vec2>& myRay, int& limit){
         if (intersection) {
             auto intersectionPoint = myRay.getOrigin() + myRay.getDirection() * distance;
             auto color = tmpSegment.color;
-            //drawLine(myRay.getOrigin(), intersectionPoint, color);
-            //drawLineAsRect(myRay.getOrigin(), intersectionPoint, color, 7.);
-            drawLineAsRectRounded(myRay.getOrigin(), intersectionPoint, color, 10.);
-
+            drawLine(myRay.getOrigin(), intersectionPoint, color);
             // the direction of the ray will be the direction of the reflected light
             auto segmentDir = tmpSegment.a - tmpSegment.b;
             auto segmentSurfaceNormal = glm::vec2(segmentDir.y, -segmentDir.x);
@@ -96,8 +92,7 @@ void ofApp::drawLine(glm::vec2 o, glm::vec2 e, ofColor c){
     ofSetColor(c);
     ofDrawLine(o,e);
     ofPopStyle();
-
-};
+}
 
 void ofApp::drawLineAsRect(glm::vec2 startVec, glm::vec2 endVec, ofColor c, float thickness) {
   float angle = atan((endVec.y-startVec.y)/(endVec.x-startVec.x));
