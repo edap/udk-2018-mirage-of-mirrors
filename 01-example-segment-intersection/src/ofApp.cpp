@@ -18,12 +18,14 @@ void ofApp::draw(){
     ofDrawLine(p1, p2);
 
     glm::vec2 intersection; // store the intersection value
-    bool intersects; // store a boolean to check if there is an intersection
+    float distance;
 
-    ray.intersectsSegment(p1, p2, intersection, intersects);
+    bool intersects = ray.intersectsSegment(p1, p2, distance);
     ofPushStyle();
     // is there an intersection between the segment and the ray?
     if (intersects) {
+        // calculate the intersection point
+        intersection = ray.getOrigin() + ray.getDirection() * distance;
         // draw the ray that hit the segment
         ofSetColor(100, 0, 100);
         ofDrawLine(ray.getOrigin(), intersection);
