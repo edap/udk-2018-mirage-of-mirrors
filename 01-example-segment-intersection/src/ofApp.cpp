@@ -13,9 +13,14 @@ void ofApp::update(){;
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofBackground(ofColor(255));
 
     ray.draw();
+    ofSetLineWidth(20);
+    ofPushStyle();
+    ofSetColor(0,255,0);
     ofDrawLine(p1, p2);
+    ofPopStyle();
 
     glm::vec2 intersection; // store the intersection value
     float distance;
@@ -28,6 +33,7 @@ void ofApp::draw(){
         intersection = ray.getOrigin() + ray.getDirection() * distance;
         // draw the ray that hit the segment
         ofSetColor(100, 0, 100);
+        ofSetLineWidth(20);
         ofDrawLine(ray.getOrigin(), intersection);
         // draw the reflection
         // https://glm.g-truc.net/0.9.4/api/a00131.html
@@ -43,6 +49,7 @@ void ofApp::draw(){
         glm::vec2 segmentSurfaceNormal = glm::vec2(segmentDir.y, -segmentDir.x);
 
         auto reflectDir = glm::reflect(ray.getDirection(), segmentSurfaceNormal);
+        ofSetColor(0,0,255);
         ofDrawLine(intersection, intersection + reflectDir * ofGetWidth());
     }
     ofPopStyle();
@@ -55,6 +62,7 @@ void ofApp::draw(){
 void ofApp::drawLegend(glm::vec2 rayOrig, glm::vec2 intersection,bool intersects){
     ofPushStyle();
     // ray
+    ofSetLineWidth(20);
     ofSetColor(255, 0, 0);
     ofDrawBitmapString("Origin of the ray", rayOrig.x - 200, rayOrig.y);
     ofSetColor(0, 0, 255);
@@ -72,7 +80,7 @@ void ofApp::drawLegend(glm::vec2 rayOrig, glm::vec2 intersection,bool intersects
         ofDrawBitmapString("intersection point",
                            intersection.x + 30, intersection.y + 10);
         // reflection
-        ofSetColor(60,200,200);
+        ofSetColor(0,0,255);
         ofDrawBitmapString("reflected light",
                            intersection.x - 100, intersection.y - 20);
     }

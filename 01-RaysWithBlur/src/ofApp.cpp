@@ -19,8 +19,17 @@ void ofApp::setup(){
 void ofApp::update(){
     auto orig = glm::vec2(ofGetWidth()/2, ofGetHeight()/2);
     ray.setOrigin(orig);
-    auto sinedT = sin(ofGetElapsedTimef() * freq);
-    auto cosinedT = cos(ofGetElapsedTimef() * freq);
+
+    float sinedT;
+    float cosinedT;
+    if (rotateRay){
+        sinedT = sin(ofGetElapsedTimef() * freq);
+        cosinedT = cos(ofGetElapsedTimef() * freq);
+    } else {
+        sinedT = sin(oldTime * freq);
+        cosinedT = cos(oldTime * freq);
+    }
+
     ray.setDirection(glm::vec2(sinedT, cosinedT));
 }
 
@@ -29,12 +38,15 @@ void ofApp::draw(){
     blur.begin();
     //ray.draw();
 
-    for(auto s:segments){
-        ofPushStyle();
-        ofSetColor(s.color);
-        ofDrawLine(s.a, s.b);
-        ofPopStyle();
+    if (drawSegments) {
+        for(auto s:segments){
+            ofPushStyle();
+            ofSetColor(s.color);
+            ofDrawLine(s.a, s.b);
+            ofPopStyle();
+        }
     }
+
     int maxBounces = 30;
     drawBouncingRay(ray,maxBounces);
 
@@ -109,6 +121,13 @@ void ofApp::keyPressed(int key){
     }
     if (key == 'c') {
         segments.clear();
+    }
+    if (key == 's') {
+        drawSegments = !drawSegments;
+    }
+    if (key == 'r') {
+        oldTime = ofGetElapsedTimef();
+        rotateRay = !rotateRay;
     }
 
     if(key == ' '){

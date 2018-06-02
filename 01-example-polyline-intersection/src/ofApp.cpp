@@ -21,8 +21,10 @@ void ofApp::update(){;
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofBackground(ofColor::white);
 
     ofPushStyle();
+    ofSetLineWidth(20);
     ofSetColor(ofColor(0, 255, 0));
     poly.draw();
     ofPopStyle();
@@ -36,6 +38,7 @@ void ofApp::draw(){
 
 
         ofPushStyle();
+        ofSetLineWidth(20);
         // is there an intersection between the plane and the ray?
         if (intersects) {
             // draw the ray that hit the plane
@@ -59,6 +62,7 @@ void ofApp::draw(){
 void ofApp::drawLegend(glm::vec2 rayOrig, glm::vec2 intersection,bool intersects){
 
     ofPushStyle();
+    ofSetLineWidth(20);
     // ray
     ofSetColor(255,0,0);
     ofDrawBitmapString("Origin of the ray", rayOrig.x-200, rayOrig.y);

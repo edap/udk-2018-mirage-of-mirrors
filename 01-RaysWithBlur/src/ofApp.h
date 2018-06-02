@@ -45,8 +45,12 @@ class ofApp : public ofBaseApp{
     int mode;
 
     //gui
-    bool drawGui = false;
+    bool drawGui = true;
+    bool drawSegments = true;
     bool isDrawing = false;
+    bool rotateRay = true;
+    float oldTime = 0;
+
     ofxPanel gui;
     ofParameter <float> freq;
     ofParameterGroup parameters;
