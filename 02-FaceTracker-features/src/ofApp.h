@@ -7,25 +7,26 @@
 
 class ofApp : public ofBaseApp {
 public:
-    void setup();
-    void update();
-    void draw();
+	void setup();
+	void update();
+	void draw();
+    void drawFeature(int x, int y, ofxFaceTracker::Feature feature, float scaleX = 1.0, float scaleY = 1.0);
+
     void keyPressed(int key);
+    void keyReleased(int key);
+    void mouseMoved(int x, int y);
+    void mouseDragged(int x, int y, int button);
+    void mousePressed(int x, int y, int button);
+    void mouseReleased(int x, int y, int button);
+    void mouseEntered(int x, int y);
+    void mouseExited(int x, int y);
+    void windowResized(int w, int h);
+    void dragEvent(ofDragInfo dragInfo);
+    void gotMessage(ofMessage msg);
 
-    ofVideoGrabber cam;
-    ofxFaceTracker tracker;
-    glm::vec2 leftEye;
-    glm::vec2 rightEye;
+
+    ofTexture grabFeature(ofPolyline featureProfile, ofRectangle bBox);
+	
+	ofVideoGrabber cam;
+	ofxFaceTracker tracker;
 };
-
-/*
- Available features:
-
-      LEFT_EYE_TOP, RIGHT_EYE_TOP,
-        LEFT_EYEBROW, RIGHT_EYEBROW,
-        LEFT_EYE, RIGHT_EYE,
-        LEFT_JAW, RIGHT_JAW, JAW,
-        OUTER_MOUTH, INNER_MOUTH,
-        NOSE_BRIDGE, NOSE_BASE,
-        FACE_OUTLINE, ALL_FEATURES
- */
