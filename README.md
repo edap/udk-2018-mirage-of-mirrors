@@ -19,12 +19,23 @@ Picture from *Kader Attia "Holy Land", 2006*
 
 | --            |  -- |
 :-------------------------:|:-------------------------:
-![](img/rays/polyline.png)  |  ![](img/rays/ray-segment.png)
+![](img/rays/poliline.png)  |  ![](img/rays/ray-segment.png)
 ![](img/rays/laser2.png)  |  ![](img/rays/blur3.png)
 
 
 - Faces
+| --            |  -- |
+:-------------------------:|:-------------------------:
+![](img/face/face-blobs.png)  |  ![](img/face/nirvana.png)
+![](img/face/who.png)  |  ![](img/face/wow.png)
+
+
 - Symmetries
+| --            |  -- |
+:-------------------------:|:-------------------------:
+![](img/face/mirror1.png)  |  ![](img/face/mirror1a.png)
+![](img/symmetry/radial.png)  |  ![](img/symmetry/symm.png)
+
 
 ## Learning Resources
 
