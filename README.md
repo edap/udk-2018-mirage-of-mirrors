@@ -24,6 +24,7 @@ Picture from *Kader Attia "Holy Land", 2006*
 
 
 - Faces
+
 | --            |  -- |
 :-------------------------:|:-------------------------:
 ![](img/face/face-blobs.png)  |  ![](img/face/nirvana.png)
@@ -31,6 +32,7 @@ Picture from *Kader Attia "Holy Land", 2006*
 
 
 - Symmetries
+
 | --            |  -- |
 :-------------------------:|:-------------------------:
 ![](img/face/mirror1.png)  |  ![](img/face/mirror1a.png)
