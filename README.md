@@ -16,6 +16,13 @@ Picture from *Kader Attia "Holy Land", 2006*
 ## Contents
 
 - Rays
+
+| --            |  -- |
+:-------------------------:|:-------------------------:
+![](img/rays/polyline.png)  |  ![](img/rays/ray-segment.png)
+![](img/rays/laser2.png)  |  ![](img/rays/blur3.png)
+
+
 - Faces
 - Symmetries
 
