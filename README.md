@@ -36,7 +36,7 @@ Picture from *Kader Attia "Holy Land", 2006*
 | --            |  -- |
 :-------------------------:|:-------------------------:
 ![](img/face/mirror1a.png)  |  ![](img/face/mirror1.png)
-![](img/simmetry/radial.png)  |  ![](img/simmetry/symm.png)
+![](img/simmetry/radial.png)  |  ![](img/simmetry/symm.jpg)
 
 
 ## Learning Resources
