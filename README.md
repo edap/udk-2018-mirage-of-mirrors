@@ -17,7 +17,7 @@ Picture from *Kader Attia "Holy Land", 2006*
 
 - Rays
 
-| --            |  -- |
+| -            |  - |
 :-------------------------:|:-------------------------:
 ![](img/rays/poliline.png)  |  ![](img/rays/ray-segment.png)
 ![](img/rays/laser2.png)  |  ![](img/rays/blur3.png)
@@ -25,7 +25,7 @@ Picture from *Kader Attia "Holy Land", 2006*
 
 - Faces
 
-| --            |  -- |
+| -            |  - |
 :-------------------------:|:-------------------------:
 ![](img/face/face-blobs.png)  |  ![](img/face/nirvana.png)
 ![](img/face/who.png)  |  ![](img/face/wow.png)
@@ -33,7 +33,7 @@ Picture from *Kader Attia "Holy Land", 2006*
 
 - Symmetries
 
-| --            |  -- |
+| -            |  - |
 :-------------------------:|:-------------------------:
 ![](img/face/mirror1a.png)  |  ![](img/face/mirror1.png)
 ![](img/simmetry/radial.png)  |  ![](img/simmetry/symm.jpg)
